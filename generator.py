@@ -11,7 +11,7 @@ profile_link = "https://github.com/Deepashprojects"
 text_to_show = "Scan to visit my GitHub Profile"
 filename = "professional_qr.png"
 temp_filename = "temp_qr.png"
-logo_path = None  # Set to "logo.png" if you want to embed a small logo (recommended size ~40-80 px)
+logo_path = None 
 
 # 1. Create the base QR Code
 qr = qrcode.QRCode(
@@ -23,7 +23,7 @@ qr = qrcode.QRCode(
 qr.add_data(profile_link)
 qr.make(fit=True)
 
-# 2. Generate the Styled Image and SAVE it immediately
+
 qr_object = qr.make_image(
     image_factory=StyledPilImage,
     module_drawer=RoundedModuleDrawer(),
@@ -100,4 +100,5 @@ finally:
         if temp_path.exists():
             temp_path.unlink()
     except Exception:
+
         pass
